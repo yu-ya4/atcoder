@@ -9,10 +9,6 @@ def gcd(a, b):
         a, b = b, a % b
     return a
 
-def gcd_l(l):
-    return functools.reduce(lambda x, y: gcd(x, y), l)
-
-
 l = [0] * N  #L_i, i = 0, 1, 2, ..., N-1
 for i in range(N):
     if i == 0:
@@ -25,7 +21,7 @@ for j in range(N):
     if j == 0:
         continue
     else:
-        r[N-j] = gcd(r[N-j], A[N-j-1])
+        r[N-j-1] = gcd(r[N-j], A[N-j])
 
 m = [0] * N
 for i in range(N):
